@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIMBOT.AD - 모듈형 디스코드 봇</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="/img/logo.png" alt="AIMBOT.AD">
+          <h1>AIMBOT.AD</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/" class="active">홈</a></li>
+          <li><a href="/features">기능</a></li>
+          <li><a href="/modules">모듈</a></li>
+          <li><a href="/dashboard" class="cta-button">대시보드</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>모듈형 디스코드 봇으로<br>서버를 더 스마트하게</h1>
+          <p>다양한 모듈을 추가하여 디스코드 서버를 원하는 대로 커스터마이징하세요.</p>
+          <div class="cta-buttons">
+            <a href="/dashboard" class="cta-button primary">시작하기</a>
+            <a href="/features" class="cta-button secondary">기능 살펴보기</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="/img/bot-illustration.png" alt="AIMBOT.AD 봇 일러스트레이션">
+        </div>
+      </section>
+
+      <section class="features">
+        <h2>주요 기능</h2>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <div class="icon">
+              <i class="fas fa-puzzle-piece"></i>
+            </div>
+            <h3>모듈형 시스템</h3>
+            <p>필요한 기능만 선택하여 가볍고 효율적인 봇을 구성하세요.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>웹 대시보드</h3>
+            <p>웹 인터페이스에서 편리하게 봇을 관리하고 모니터링하세요.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>커스텀 기능</h3>
+            <p>자신만의 모듈을 개발하고 추가할 수 있는 확장성을 제공합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="modules">
+        <h2>인기 모듈</h2>
+        <div class="module-grid">
+          <div class="module-card">
+            <h3>환영 메시지</h3>
+            <p>새로운 멤버가 서버에 참여할 때 맞춤형 환영 메시지를 보냅니다.</p>
+            <div class="module-footer">
+              <span class="tag">자동화</span>
+              <a href="/module/welcome" class="view-more">자세히 보기</a>
+            </div>
+          </div>
+          <div class="module-card">
+            <h3>음악 플레이어</h3>
+            <p>디스코드 채널에서 고품질 음악을 재생하고 재생 목록을 관리합니다.</p>
+            <div class="module-footer">
+              <span class="tag">미디어</span>
+              <a href="/module/music" class="view-more">자세히 보기</a>
+            </div>
+          </div>
+          <div class="module-card">
+            <h3>레벨 시스템</h3>
+            <p>서버 활동에 따라 레벨과 경험치를 제공하는 시스템입니다.</p>
+            <div class="module-footer">
+              <span class="tag">게임화</span>
+              <a href="/module/levels" class="view-more">자세히 보기</a>
+            </div>
+          </div>
+          <div class="module-card">
+            <h3>모더레이션</h3>
+            <p>서버 관리를 돕는 다양한 모더레이션 명령어를 제공합니다.</p>
+            <div class="module-footer">
+              <span class="tag">관리</span>
+              <a href="/module/moderation" class="view-more">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="center">
+          <a href="/modules" class="cta-button secondary">모든 모듈 보기</a>
+        </div>
+      </section>
+      
+      <section class="stats">
+        <h2>AIMBOT.AD 현황</h2>
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="stat-number" id="servers-count">0</div>
+            <div class="stat-label">서버</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="users-count">0</div>
+            <div class="stat-label">사용자</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="modules-count">0</div>
+            <div class="stat-label">모듈</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="commands-count">0</div>
+            <div class="stat-label">명령어</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="/img/logo.png" alt="AIMBOT.AD">
+          <h2>AIMBOT.AD</h2>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>링크</h3>
+            <ul>
+              <li><a href="/">홈</a></li>
+              <li><a href="/features">기능</a></li>
+              <li><a href="/modules">모듈</a></li>
+              <li><a href="/dashboard">대시보드</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>리소스</h3>
+            <ul>
+              <li><a href="/docs">문서</a></li>
+              <li><a href="/api">API</a></li>
+              <li><a href="/support">지원</a></li>
+              <li><a href="/faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>연락처</h3>
+            <ul>
+              <li><a href="https://discord.gg/aimbot-ad">디스코드</a></li>
+              <li><a href="mailto:contact@aimbot-ad.xyz">이메일</a></li>
+              <li><a href="https://github.com/aimbot-ad">깃허브</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 AIMBOT.AD - 모든 권리 보유</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

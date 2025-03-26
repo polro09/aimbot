@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 - AIMBOT.AD</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="logo">
+          <img src="/img/logo.png" alt="AIMBOT.AD">
+          <h1>AIMBOT.AD</h1>
+        </div>
+        <h2>관리자 로그인</h2>
+      </div>
+      
+      <form class="login-form" action="/login" method="post">
+        <div class="form-group">
+          <label for="username">
+            <i class="fas fa-user"></i>
+            <span>사용자 이름</span>
+          </label>
+          <input type="text" id="username" name="username" required placeholder="사용자 이름 입력...">
+        </div>
+        
+        <div class="form-group">
+          <label for="password">
+            <i class="fas fa-lock"></i>
+            <span>비밀번호</span>
+          </label>
+          <input type="password" id="password" name="password" required placeholder="비밀번호 입력...">
+        </div>
+        
+        <div class="error-message" id="error-message">
+          <!-- 에러 메시지가 여기에 표시됩니다 -->
+        </div>
+        
+        <button type="submit" class="login-button">
+          <span>로그인</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+      
+      <div class="login-footer">
+        <a href="/">홈으로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // URL에서 에러 파라미터 확인
+      const urlParams = new URLSearchParams(window.location.search);
+      const errorParam = urlParams.get('error');
+      
+      // 에러 메시지 표시
+      if (errorParam === '1') {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = '잘못된 사용자 이름 또는 비밀번호입니다.';
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대시보드 - AIMBOT.AD</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <img src="/img/logo.png" alt="AIMBOT.AD">
+          <h1>AIMBOT.AD</h1>
+        </div>
+        <button class="toggle-sidebar">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="nav-item active">
+              <a href="/dashboard" class="nav-link">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>대시보드</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/dashboard/servers" class="nav-link">
+                <i class="fas fa-server"></i>
+                <span>서버 관리</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/dashboard/modules" class="nav-link">
+                <i class="fas fa-puzzle-piece"></i>
+                <span>모듈</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/dashboard/commands" class="nav-link">
+                <i class="fas fa-terminal"></i>
+                <span>명령어</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/dashboard/logs" class="nav-link">
+                <i class="fas fa-list"></i>
+                <span>로그</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/dashboard/settings" class="nav-link">
+                <i class="fas fa-cog"></i>
+                <span>설정</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <a href="/logout" class="logout-button">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>로그아웃</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+    
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="header-content">
+          <div class="page-title">
+            <h1>대시보드</h1>
+          </div>
+          <div class="header-actions">
+            <div class="bot-status">
+              <span class="status-indicator online"></span>
+              <span class="status-text">온라인</span>
+            </div>
+            <div class="user-menu">
+              <button class="user-menu-button">
+                <img src="/img/avatar-placeholder.png" alt="User Avatar">
+                <span>관리자</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="user-dropdown">
+                <a href="/dashboard/profile">프로필</a>
+                <a href="/dashboard/settings">설정</a>
+                <a href="/logout">로그아웃</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <div class="dashboard-content">
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-header">
+              <h2>봇 상태</h2>
+              <div class="card-actions">
+                <button class="refresh-button" id="refresh-status">
+                  <i class="fas fa-sync-alt"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <div class="stat-icon">
+                    <i class="fas fa-server"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-label">서버</div>
+                    <div class="stat-value" id="servers-count">-</div>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-label">유저</div>
+                    <div class="stat-value" id="users-count">-</div>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-icon">
+                    <i class="fas fa-memory"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-label">메모리</div>
+                    <div class="stat-value" id="memory-usage">-</div>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-label">업타임</div>
+                    <div class="stat-value" id="uptime">-</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              <h2>활성 모듈</h2>
+              <div class="card-actions">
+                <a href="/dashboard/modules" class="view-all">모두 보기</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="module-list" id="active-modules">
+                <div class="loading">모듈 정보를 불러오는 중...</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              <h2>최근 로그</h2>
+              <div class="card-actions">
+                <a href="/dashboard/logs" class="view-all">모두 보기</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="log-list" id="recent-logs">
+                <div class="loading">로그를 불러오는 중...</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              <h2>명령어 실행</h2>
+            </div>
+            <div class="card-body">
+              <div class="command-form">
+                <div class="form-group">
+                  <label for="command-input">명령어</label>
+                  <input type="text" id="command-input" placeholder="명령어 입력...">
+                </div>
+                <div class="form-group">
+                  <label for="command-params">파라미터 (JSON)</label>
+                  <textarea id="command-params" placeholder='{"param1": "value1", "param2": "value2"}'></textarea>
+                </div>
+                <button id="execute-command" class="primary-button">실행</button>
+                <div id="command-result" class="command-result"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="dashboard-footer">
+        <p>&copy; 2024 AIMBOT.AD - 모든 권리 보유</p>
+      </footer>
+    </main>
+  </div>
+  
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

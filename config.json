@@ -1,0 +1,11 @@
+{
+    "token": "MTI3MDE4MjU4NzA0NTc3MzM4OQ.GxW__6.9JTbfr9rnHM1XENWufEh_X5MlaFVEjNFaMTP9Q",
+    "clientId": "1270182587045773389",
+    "prefix": "!",
+    "adminUsername": "admin",
+    "adminPassword": "021926",
+    "sessionSecret": "aimbot-ad-session-secret-key",
+    "wsPort": 8080,
+    "webPort": 3000,
+    "domain": "localhost"
+  }
