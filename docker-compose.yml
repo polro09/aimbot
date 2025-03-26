@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aimbot-ad-bot
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - aimbot-network
+    ports:
+      - "8080:8080"
+    command: ["node", "main.js"]
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aimbot-ad-web
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./web/public:/app/web/public
+      - ./web/data:/app/web/data
+      - ./logs:/app/logs
+    ports:
+      - "3000:3000"
+    networks:
+      - aimbot-network
+    command: ["node", "web/index.js"]
+    depends_on:
+      - bot
+
+networks:
+  aimbot-network:
+    driver: bridge

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서버 오류 - AIMBOT.AD</title>
+  <meta name="description" content="AIMBOT.AD - 모듈형 디스코드 봇과 웹 대시보드">
+  <meta name="keywords" content="discord, bot, dashboard, modular, 디스코드, 봇, 대시보드, 모듈형">
+  <meta name="author" content="AIMBOT.AD Team">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; img-src 'self' data:; font-src 'self' cdnjs.cloudflare.com; connect-src 'self' ws: wss:;">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .error-code {
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .error-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .error-description {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    
+    .error-image {
+      width: 200px;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+    
+    .error-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 6rem;
+      }
+      
+      .error-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">500</div>
+    <h1 class="error-title">서버 오류가 발생했습니다</h1>
+    <p class="error-description">요청을 처리하는 중에 예기치 않은 오류가 발생했습니다. 잠시 후 다시 시도해주세요.</p>
+    <img src="/img/robot-error.png" alt="Error Robot" class="error-image">
+    <div class="error-buttons">
+      <a href="/" class="cta-button primary">홈으로 이동</a>
+      <a href="javascript:history.back()" class="cta-button secondary">이전 페이지로</a>
+    </div>
+  </div>
+</body>
+</html>
